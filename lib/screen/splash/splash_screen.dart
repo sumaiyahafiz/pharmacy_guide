@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pharmacy_guide/constants.dart';
 import 'package:pharmacy_guide/screen/home/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {

@@ -1,5 +1,8 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:pharmacy_guide/constants.dart';
+import 'package:pharmacy_guide/screen/home/Medicine_Alarm.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -8,10 +11,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        leading: Icon(
-          Icons.menu,
-          color: textPrimaryColor,
+        backgroundColor: Colors.teal.shade900,
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.menu),
         ),
         actions: [
           PopupMenuButton(
@@ -43,11 +46,16 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Card(
                 child: GestureDetector(
                   onTap: () {
-                    debugPrint('clicked');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MedicineAlarm(),
+                      ),
+                    );
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -77,8 +85,6 @@ class HomeScreen extends StatelessWidget {
                           flex: 5,
                           child: Container(
                             color: Colors.green,
-                            height: 150,
-                            width: 180,
                           ),
                         ),
                         SizedBox(height: 10),
@@ -86,8 +92,6 @@ class HomeScreen extends StatelessWidget {
                           flex: 3,
                           child: Container(
                             color: Colors.blue,
-                            height: 50,
-                            width: 180,
                           ),
                         ),
                       ],
