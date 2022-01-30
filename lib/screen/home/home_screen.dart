@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_guide/constants.dart';
 import 'package:pharmacy_guide/screen/alarm/alarm_screen.dart';
+import 'package:pharmacy_guide/screen/health_tips/health_tips_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -83,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: GestureDetector(
                       onTap: (){
                         setState(() {
-
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>HealthTips(),),);
                         });
                       },
                       child: Container(
