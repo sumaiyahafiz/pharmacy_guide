@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_guide/constants.dart';
+import 'package:pharmacy_guide/screen/alarm/alarm_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white.withOpacity(.8),
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        leading: Icon(
-          Icons.menu,
-          color: textPrimaryColor,
+        backgroundColor: primaryColor,
+        leading: IconButton(onPressed: () {
+
+        }, icon: Icon(Icons.menu),
         ),
         actions: [
           PopupMenuButton(
@@ -48,7 +54,9 @@ class HomeScreen extends StatelessWidget {
               child: Card(
                 child: GestureDetector(
                   onTap: () {
-                    debugPrint('clicked');
+                    setState(() {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>MedicineAlarm()));
+                    });
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -72,13 +80,21 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.pink,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            'https://cdn2.momjunction.com/wp-content/uploads/2020/11/17-Simple-And-Useful-Health-Tips-For-Children-To-Follow-Banner-910x1024.jpg',
+                    child: GestureDetector(
+                      onTap: (){
+                        setState(() {
+
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.pink,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                              'https://nexttvc.com/wp-content/uploads/2022/01/Healthy-Food-Tips-242.jpg',
+                            ),
                           ),
                         ),
                       ),
@@ -92,6 +108,7 @@ class HomeScreen extends StatelessWidget {
                           flex: 5,
                           child: Container(
                             decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
                               color: Colors.green,
                               image: DecorationImage(
                                 fit: BoxFit.cover,
@@ -107,11 +124,12 @@ class HomeScreen extends StatelessWidget {
                           flex: 3,
                           child: Container(
                               decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
                             color: Colors.green,
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                'https://www.cdc.gov/fungal/diseases/aspergillosis/images/318301-A_WEB_FungalLandingPages_Candidiasis_Symptoms.jpg',
+                                'https://gulfdialysis.com/wp-content/uploads/2020/06/190107682.jpg',
                               ),
                             ),
                           )),
