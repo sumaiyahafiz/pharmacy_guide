@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pharmacy_guide/screen/health_tips/health_tips_screen.dart';
 import 'package:pharmacy_guide/screen/splash/splash_screen.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+     // home: SplashScreen(),
+      home: HealthTips(),
     );
   }
 }

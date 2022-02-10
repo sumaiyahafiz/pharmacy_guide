@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_guide/constants.dart';
+import 'package:pharmacy_guide/screen/alarm/alarm_screen.dart';
 import 'package:pharmacy_guide/screen/health_tips/health_tips_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -49,6 +50,7 @@ class HomeScreen extends StatelessWidget {
               child: Card(
                 child: GestureDetector(
                   onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>AlarmScreen()));
                     debugPrint('clicked');
                   },
                   child: Container(

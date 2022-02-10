@@ -8,41 +8,35 @@ class Healthtips_Model {
   });
 }
 
-List<Healthtips_Model> H_Tips = [
+List<Healthtips_Model> h_tips = [
   Healthtips_Model(
     Name: 'Food & Nutrition',
     image:
-        'https://cdn.simplesite.com/i/92/08/282319409929586834/i282319414677948144._szw1280h1280_.jpg',
-    h_t_cata: '',
-  ),
-  Healthtips_Model(
-    Name: 'Food & Nutrition',
-    image:
-        'https://betterme.world/articles/wp-content/uploads/2020/09/shutterstock_1667782504.jpg',
-    h_t_cata: '',
-  ),
-  Healthtips_Model(
-    Name: 'Food & Nutrition',
-    image:
-        'https://betterme.world/articles/wp-content/uploads/2020/09/shutterstock_1667782504.jpg',
+        'https://kripalu.org/sites/default/files/GettyImages-1069478762_2019foodtrends_ref.jpg',
     h_t_cata: 'food_natrition',
   ),
   Healthtips_Model(
-    Name: 'Food & Nutrition',
+    Name: 'Exercise & Fitness',
     image:
-        'https://betterme.world/articles/wp-content/uploads/2020/09/shutterstock_1667782504.jpg',
-    h_t_cata: '',
+        'https://pngimg.com/uploads/gym_equipment/gym_equipment_PNG172.png',
+    h_t_cata: 'exercise & fitness',
   ),
   Healthtips_Model(
-    Name: 'Food & Nutrition',
+    Name: 'Health & Advice',
     image:
-        'https://betterme.world/articles/wp-content/uploads/2020/09/shutterstock_1667782504.jpg',
-    h_t_cata: '',
+        'https://www.netclipart.com/pp/m/10-107941_light-bulb-clipart-png.png',
+    h_t_cata: 'health & advice',
   ),
   Healthtips_Model(
-    Name: 'Food & Nutrition',
+    Name: 'Mother &  child Health',
     image:
-        'https://betterme.world/articles/wp-content/uploads/2020/09/shutterstock_1667782504.jpg',
-    h_t_cata: '',
+        'https://www.clipartkey.com/mpngs/m/315-3156356_maternal-infant-and-child-care-photo-maternal-and.png',
+    h_t_cata: 'mother & child health',
+  ),
+  Healthtips_Model(
+    Name: 'First Aid',
+    image:
+        'https://hometreatsuk.com/wp-content/uploads/2019/06/KA620-1.jpg',
+    h_t_cata: 'fist aid',
   ),
 ];

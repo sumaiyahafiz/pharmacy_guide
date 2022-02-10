@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pharmacy_guide/models/health_tips_model.dart';
+import 'package:pharmacy_guide/models/helth_tips_item_model.dart';
+import 'package:pharmacy_guide/screen/helth_tips_cata/helth_tips_cata_screen.dart';
 
 class HealthTips extends StatelessWidget {
   const HealthTips({Key? key}) : super(key: key);
@@ -8,34 +11,63 @@ class HealthTips extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          Expanded(
-            child: GridView.builder(
-              scrollDirection: Axis.horizontal,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1,
-                mainAxisSpacing: 5,
-              ),
-              itemBuilder: (context, index) => Container(
-                color: Colors.black,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 2,
+              child: GridView.builder(
+                itemCount: h_tips.length,
+                scrollDirection: Axis.horizontal,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,
+                  mainAxisSpacing: 5,
+                ),
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HelthTipsCataScreen(),));
+                  },
+                  child: Container(
+alignment: Alignment.bottomCenter,
+                    child: Text(h_tips[index].Name,style: TextStyle(),),
+                    decoration: BoxDecoration(
+                        color: Colors.purpleAccent,
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage(h_tips[index].image),
+                      )
+                    ),
+                  ),
+                ),
               ),
             ),
-          ),
-          Expanded(
-            flex: 4,
-            child: ListView.builder(
-              itemBuilder: (context, index) => Card(
-                child: Container(
+            SizedBox(
+              width: 400,
+              child: Divider(
+                color: Colors.black38,
+                height: 20,
+
+              ),
+            ),
+            Expanded(
+              flex: 4,
+              child: ListView.separated(
+                itemCount: h_item_list.length,
+                itemBuilder: (context, index) => Container(
+
+                  decoration: BoxDecoration(
+                    color: Colors.purpleAccent,
+                    borderRadius: BorderRadius.circular(20),
+
+                  ),
                   height: size.height * .2,
                   child: Row(
                     children: [
                       Expanded(
                         child: Container(
                           child: Image(
-                            image: NetworkImage(
-                              'https://betterme.world/articles/wp-content/uploads/2020/09/shutterstock_1667782504.jpg',
-                            ),
+                            image: AssetImage( h_item_list[index].h_item_img),
                           ),
                         ),
                       ),
@@ -47,24 +79,29 @@ class HealthTips extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Vitamin A',
+                                h_item_list[index].h_item_name,
                                 style: TextStyle(
-                                  fontSize: 30,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
-                                  'InstructorofMobileapplicationandGamedevelopmentprojectunderICT ministry InstructorofMobileapplicationandGamedevelopmentprojectunderICT ministry'),
+                                h_item_list[index].h_item_details,
+                                style: TextStyle(),
+                                maxLines: 4,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ],
                           ),
                         ),
                       )),
                     ],
                   ),
-                ),
+                ), separatorBuilder: (BuildContext context, int index) { return SizedBox(height: 10,); },
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
