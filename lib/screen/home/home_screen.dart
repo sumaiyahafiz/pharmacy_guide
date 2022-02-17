@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_guide/constants.dart';
+import 'package:pharmacy_guide/models/GridViewModel.dart';
+import 'package:pharmacy_guide/screen/Disease_Symptoms/Disease%20_Symptoms%20Screen.dart';
 import 'package:pharmacy_guide/screen/alarm/alarm_screen.dart';
 import 'package:pharmacy_guide/screen/health_tips/health_tips_screen.dart';
 
@@ -62,7 +64,8 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         color: Colors.amber,
-                        borderRadius: BorderRadius.circular(10)),
+                        borderRadius: BorderRadius.circular(10),
+                    ),
                     height: 200,
                     width: double.infinity,
                   ),
@@ -85,6 +88,7 @@ class HomeScreen extends StatelessWidget {
                       },
                       child: Container(
                         decoration: BoxDecoration(
+
                           color: Colors.pink,
                           image: DecorationImage(
                             fit: BoxFit.cover,
@@ -92,6 +96,7 @@ class HomeScreen extends StatelessWidget {
                               'https://cdn2.momjunction.com/wp-content/uploads/2020/11/17-Simple-And-Useful-Health-Tips-For-Children-To-Follow-Banner-910x1024.jpg',
                             ),
                           ),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
@@ -102,14 +107,21 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           flex: 5,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: NetworkImage(
-                                  'https://brettpodolsky.com/wp-content/uploads/2019/02/Depositphotos_103806958_m-2015.jpg',
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>DiseaseSymptoms()));
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+
+                                color: Colors.green,
+                                image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                    'https://www.stormontvail.org/wp-content/uploads/2018/02/infectious-disease-1.png',
+                                  ),
                                 ),
+                                borderRadius: BorderRadius.circular(10),
                               ),
                             ),
                           ),
@@ -117,16 +129,22 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: 10),
                         Expanded(
                           flex: 3,
-                          child: Container(
-                              decoration: BoxDecoration(
-                            color: Colors.green,
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                'https://www.cdc.gov/fungal/diseases/aspergillosis/images/318301-A_WEB_FungalLandingPages_Candidiasis_Symptoms.jpg',
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>DiseaseSymptoms()));
+                            },
+                            child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                              color: Colors.green,
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(
+                                  'https://www.stormontvail.org/wp-content/uploads/2018/02/infectious-disease-1.png',
+                                ),
                               ),
-                            ),
-                          )),
+                            )),
+                          ),
                         ),
                       ],
                     ),
@@ -155,6 +173,8 @@ class HomeScreen extends StatelessWidget {
                     mainAxisSpacing: 10,
                   ),
                   itemBuilder: (context, index) => GridTile(
+                    header: Icon(grid_List[index].icon),
+                      footer: Text(grid_List[index].Name),
                       child: Container(
                     color: Colors.amber,
                   )),

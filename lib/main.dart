@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_guide/screen/health_tips/health_tips_screen.dart';
+import 'package:pharmacy_guide/screen/home/home_screen.dart';
 import 'package:pharmacy_guide/screen/splash/splash_screen.dart';
+
+import 'screen/Disease_Symptoms/Disease _Symptoms Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +20,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-     // home: SplashScreen(),
-      home: HealthTips(),
+      //home: SplashScreen(),
+      home: HomeScreen(),
+
     );
   }
 }

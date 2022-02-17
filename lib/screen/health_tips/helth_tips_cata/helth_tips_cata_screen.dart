@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmacy_guide/models/helth_tips_item_model.dart';
+import 'package:pharmacy_guide/screen/health_tips/item_details/item_details_screen.dart';
 import 'package:pharmacy_guide/screen/item_details/item_details_screen.dart';
 
 class HelthTipsCataScreen extends StatelessWidget {

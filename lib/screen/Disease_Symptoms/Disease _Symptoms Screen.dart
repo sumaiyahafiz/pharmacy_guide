@@ -16,7 +16,7 @@ class DiseaseSymptoms extends StatelessWidget {
         backgroundColor: primaryColor,
       ),
       body: ListView.builder(
-          itemCount: 10,
+          itemCount: d_s_List.length,
           itemBuilder: (context, index) => InkWell(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>DiseaseSymptomsDetails(disease: d_s_List[index],)));
@@ -71,10 +71,10 @@ class DiseaseSymptoms extends StatelessWidget {
                         ),
                       ),
                       subtitle: Text(
-                        d_s_List[index].d_s_disease,
+                        d_s_List[index].d_s_details,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(color: Colors.white30),
+                        style: TextStyle(color: Colors.white60),
                       ),
                     ),
                   ),
